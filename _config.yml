@@ -1,0 +1,9 @@
+permalink: /
+pygments: true
+prose:
+  rooturl: "_posts"
+  metadata:
+    "_posts":
+      layout: "post"
+      title: "Title of your article"
+      published: true

@@ -1,0 +1,31 @@
+---
+layout: nil
+---
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Knife.io</title>
+  <link href="http://knife.io/"/>
+  <link type="application/atom+xml" rel="self" href="http://knife.io"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>http://knife.io/</id>
+  <author>
+    <name>Knife.io</name>
+    <email>knife.in.out@gmail.com</email>
+  </author>
+
+  {% for post in site.posts %}
+  {% if post.standalone == null and post.type != 'page' %}
+  <entry>
+    <id>http://knife-io.github.com/{{ post.id }}</id>
+    <link type="text/html" rel="alternate" href="http://knife-io.github.com/{{ post.url }}"/>
+    <title>{{ post.title }}</title>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <author>
+      <name>{{post.author}} - Knife.io</name>
+      <uri>http://knife-io/</uri>
+    </author>
+    <content type="html">{{ post.content | xml_escape }}</content>
+  </entry>
+  {% endif %}
+  {% endfor %}
+</feed>

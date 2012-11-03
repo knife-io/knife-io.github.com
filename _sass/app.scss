@@ -1,0 +1,15 @@
+// setup
+@import "partials/settings";
+
+// import own files
+@import "partials/animations";
+@import "partials/typography";
+@import "partials/forms";
+@import "partials/generic";
+@import "partials/mq/large";
+@import "partials/mq/huge";
+
+
+@media print{
+	@import "partials/print";
+}

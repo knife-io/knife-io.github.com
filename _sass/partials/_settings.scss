@@ -1,0 +1,89 @@
+/*
+ * knife.io blog styles
+ * author: knife.in.out@gmail.com
+ */
+ // let sass know if we're in development mode to hide dev code
+$development-mode : false;
+
+// typography settings
+//------------------------------------------------------------------------------
+$base-font-size : 16px;
+$bf : 16;
+$base-line-height : 24px;
+$relative-font-sizing: true;
+
+// imports
+//------------------------------------------------------------------------------
+@import "compass";
+@import "partials/custommixins";
+
+// establish baseline, generate handy mixins & variables
+@include establish-baseline;
+
+// transition defaults
+$default-transition-property : background;
+$default-transition-duration : 0.24s;
+
+@mixin sans-family{
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+@mixin serif-family{
+  font-family: Georgia, Cambria, serif;
+}
+@mixin monospace-family{
+  font-family: "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, Courier, monospace, sans-serif;
+}
+// webfonts
+// @mixin webfont{
+//   // font-family: 'Source Sans Pro', sans-serif;
+//   // font-weight:700;
+// }
+
+// @mixin fout{
+//   @include transition(0.24s ease opacity);
+
+//   &{
+//     visibility:hidden;
+//     opacity:0;
+//   }
+//   .no-js &,
+//   .wf-active &{
+//     opacity:1;
+//     visibility:visible;
+//   }
+// }
+
+// colors
+//------------------------------------------------------------------------------
+$bg: #fff;
+$body-text: #111;
+$dark: #000;
+$med:#ddd;
+
+$primary:#55bada;
+$secondary: #E06E8D;
+
+
+$link: #0881B3;
+$hover: $link;
+$visited: darken($link, 10%);
+
+// dummy classes that we can extend
+.cf{
+  @include pie-clearfix;
+}
+.sans{
+  @include sans-family;
+}
+.serif{
+  @include serif-family;
+}
+.mono{
+  @include monospace-family;
+}
+.invisible{
+  @include element-invisible;
+}
+.btn{
+  @include btn;
+}

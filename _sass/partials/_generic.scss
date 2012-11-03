@@ -1,0 +1,124 @@
+// =============================================================================
+// OBJECT ABSTRACTIONS
+// =============================================================================
+.island{
+  padding:1em; // customize this to your needs
+  clear:both; // but extending could be a good solution :)
+  @include trailer(1);
+  // remove margins to prevent compound spacing
+  > :first-child{
+    margin-top:0;
+  }
+  > :last-child{
+  	margin-bottom:0;
+  }
+}
+.dark{
+  background:$link;
+  color:#fff;
+  a{
+    &:link, &:visited{
+      color:#fff;
+      border-bottom:1px solid rgba(#fff, 0.4);
+    }
+    &:focus, &:hover, &:active{
+      backgrond:darken($link, 10%);
+      color:#fff;
+    }
+  }
+}
+.hidden{
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+// nav abstraction
+.nav{
+  list-style:none;
+  margin-left:0;
+  li{
+    display:inline;
+  }
+  a{
+    display:inline-block;
+  }
+}
+.break{
+  display:block;
+}
+// regular stuff
+body{
+  margin:0 auto;
+  padding:1.5em 1em 0 1em;
+  @extend .cf;
+}
+.site-title{
+  font-size:1em;
+  @include sans-family;
+  font-weight:normal;
+  margin:0 0 1em;
+  a{
+    display:inline-block;
+    padding:0.3em;
+    @include transition;
+    color:#fff;
+    background:$primary;
+
+    &:link, &:active, &:visited{
+      color:#fff;
+      border:none;
+    }
+    &:hover, &:focus{
+      background:$dark;
+      border:none;
+    }
+  }
+}
+.sidebar{
+  border-bottom:1px solid rgba(#000,0.3);
+  p{
+    font-size:0.8em;
+    line-height:1.5;
+    margin:0;
+  }
+
+  padding:0 0 1em;
+  margin:0 0 1em;
+}
+.align-bottom{
+  margin-bottom:0;
+}
+
+// overview listing
+.listing{
+  margin:0;
+  font-size:1.3em;
+  li{
+    list-style:none;
+    @include trailer(1);
+  }
+  time{
+    display:inline-block;
+    vertical-align:baseline;
+    padding-right:0.5em;
+    font-size:0.6em;
+    display:none;
+    min-width:80px;
+  }
+}
+
+// section post - article
+article{
+  @include padding-trailer(1);
+}
+.date{
+  font-size:0.9em;
+  .meta &{
+    display:block;
+    border-bottom:1px solid rgba(#fff,0.2);
+    margin:0 0 0.4em;
+  }
+}
+.center{
+  margin:0 auto;
+}

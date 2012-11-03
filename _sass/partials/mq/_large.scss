@@ -1,0 +1,26 @@
+@media all and (min-width: 35em){
+  // front listing
+  .listing{
+    time{
+      display:inline-block;
+      vertical-align:baseline;
+      font-size:0.7em;
+    }
+    li{
+      @include trailer(0.5);
+    }
+  }
+}
+
+@media all and (min-width: 50em){
+  ul{
+    li{
+      list-style-position:outside;
+    }
+  }
+  body{
+    max-width:45em;
+    padding:0;
+    margin:1.5em auto 0;
+  }
+}
