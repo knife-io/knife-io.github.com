@@ -1,0 +1,87 @@
+// custom mixins
+//------------------------------------------------------------------------------
+
+@mixin truncate($width){
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: $width;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+@mixin element-invisible{
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+@mixin btn($bg:$primary, $hover:$secondary){
+  line-height:2.2em;
+  min-height:2.2em;
+  @include rem('font-size', 12px);
+  text-transform:uppercase;
+  background:$bg;
+  color:#fff;
+  border:none;
+  padding:0 0.7em;
+  @include sans-family;
+  font-weight:bold;
+  text-align:center;
+  @include inline-block;
+  @include border-radius(3px);
+  @include transition;
+ 
+  &:link,
+  &:visited{
+    color:#fff;
+  }
+  &:visited{ // this is only needed when our targeted element is an A element
+    border:none;
+    &:hover, &:focus{
+      border:none;
+      background:$secondary;
+      color:#fff;
+    }
+  }
+  &:hover, &:focus{
+    background:$secondary;
+    color:#fff;
+    border:none;
+  }
+  &:visited{
+    color:#fff !important; // hacky but that's the way it's gonna be
+  }
+  &:active{
+    @include box-shadow(inset 0 0 5px darken($secondary, 25%));
+  }
+}
+
+
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+// https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss
+$baseline-px: 18px;
+
+@mixin rem($property, $px-values) {
+  // Convert the baseline into rems
+  $baseline-rem: $baseline-px / 1rem;
+  // Print the first line in pixel values
+  #{$property}: $px-values;
+  // If there is only one (numeric) value, return the property/value line for it.
+  @if type-of($px-values) == "number" {
+    #{$property}: $px-values / $baseline-rem; }
+  @else {
+    // Create an empty list that we can dump values into
+    $rem-values: unquote("");
+    @each $value in $px-values {
+      // If the value is zero, return 0
+      @if $value == 0 {
+        $rem-values: append($rem-values, $value); }
+      @else {
+        $rem-values: append($rem-values, $value / $baseline-rem); } }
+    // Return the property and its list of converted values
+    #{$property}: $rem-values; } }

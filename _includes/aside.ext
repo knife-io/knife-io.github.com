@@ -1,0 +1,6 @@
+<header class="center">
+	<h1 class="site-title">
+		<a href="/" title="Back to homepage">Knife.io</a>
+	</h1>
+	<p class="meta">Blog about <span class="mono">javascript</span> and stuff.</p>
+</header>
