@@ -18,7 +18,6 @@ Removed raw_text and prism plugin because github pages cant use these due to sec
 
 ## To do
 - check code in post (gist / normal) without prism
-- improve author / meta info
+- improve author / meta info w/ avatar, possible links, date
 - add a bit more layout
 - add disqus shortcode (disqus currently in maintenance)
-- abstract page layout to have less duplication
