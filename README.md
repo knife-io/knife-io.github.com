@@ -11,7 +11,7 @@ I added basic author info but we can use that in Liquid to add an automated link
 All pages used to live in `/p` directory and are basically full copies. I abstracted them and now they run through post layout (for now) with some extra config entries. (comments disabled, etc.)
 
 There's a style guide and a dummy page at the moment.
-Check `p/styleguide` and `p/about`.
+Check `p/style-guide` and `p/about`.
 
 ## Plugins
 Removed raw_text and prism plugin because github pages cant use these due to security.
