@@ -1,6 +1,10 @@
 The knife.io website.
 ===================
 
+## Running locally
+Run `compass watch` and `jekyll --auto --no-server` if you have separate vhost.
+
+
 ## Posts
 There's a script to set up a new post `./_newpost.sh`.
 Posts live in `/posts` dir.
