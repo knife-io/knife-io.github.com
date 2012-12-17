@@ -9,7 +9,6 @@ tags:
  - visualization
  - d3
 ---
-#{{page.title}}
 
 We submitted a small data-visualization app for Antwerp's first [Apps for Antwerp](http://opendata.antwerpen.be/nieuws/apps-antwerp) event. A challenge for developers to come up with useful applications or visualizations using the city’s data.
 

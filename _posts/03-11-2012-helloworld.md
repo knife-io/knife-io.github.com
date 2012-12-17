@@ -8,7 +8,7 @@ author: Anthony
 tags:
  - helloworld
 ---
-#{{page.title}}
+
 <blockquote>"Rainbows and unicorns have all the fun. Oh and this is a dummypost."</blockquote>
 
 A knife (plural knives) is a cutting tool with an exposed cutting edge or blade, hand-held or otherwise, with or without a handle. Knife-like tools were used at least two-and-a-half million years ago, as evidenced by the Oldowan tools. Originally made of rock, flint, and obsidian, knives have evolved in construction as technology has, with blades being made from bronze, copper, iron, steel, ceramics, and titanium. Many cultures have their unique version of the knife.

@@ -14,6 +14,9 @@
   <body {% if page.type != 'page' %}class="section-post"{% endif %}>
     {% include aside.ext %}
     <article id="content" class="content-block center">
+        {% if page.title %}
+        <h1>{{ page.title }}</h1>
+        {% endif %}
         {{ content }}
         {% if page.author %}
             <footer class="meta">Written by {{ page.author }}</footer>
