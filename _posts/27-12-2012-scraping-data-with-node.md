@@ -3,7 +3,7 @@ layout: post
 title: "Scraping data with node"
 permalink: post/27-12-2012-scraping-data-with-node
 comments: true
-published: false
+published: true
 author: Anthony Ringoet
 tags:
  - node
