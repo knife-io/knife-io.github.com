@@ -90,4 +90,6 @@ Start our visual index (printed to screen) with 1. Use lodash's ```_.each``` to 
 ## Summary ##
 This was easy, if you want more, you can [write your own command line tool](http://javascriptplayground.com/blog/2012/08/writing-a-command-line-node-tool) with node to check out Hacker News and open the url's in your browser.
 
-<script src="https://gist.github.com/4388324.js"></script>
+<!-- space between gist embed script tags is on purpose,
+http://kjetilvalle.com/posts/gists-with-jekyll.html -->
+<script src="https://gist.github.com/4388324.js"> </script>
