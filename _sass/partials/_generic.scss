@@ -47,10 +47,14 @@
   display:block;
 }
 // regular stuff
+html, body{
+  min-height:100%;
+}
 body{
   margin:0 auto;
   padding:1.5em 1em 0 1em;
   @extend .cf;
+  overflow:scroll; // fix flickr
 }
 .site-title{
   font-size:1em;
