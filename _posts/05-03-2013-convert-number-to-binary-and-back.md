@@ -52,7 +52,7 @@ We can also just drop the map function and put all the logic in the reducer. Thi
 in this very short form:
 
     // Pass 0 as the initial value.
-    // If not, the first value will be scipped and made the accumulator
+    // If not, the first value will be skipped and made the accumulator
     // for the second value.
     var result = b.split('').reduce(function(acc, val, index, ar) {
       return acc + (val * Math.pow(2, ar.length -1 - index));
