@@ -42,3 +42,5 @@ I'm not going to talk about this in detail. [Read up](http://gruntjs.com/getting
 
 
 
+## Demo setup
+todo: talk about demo setup with code samples and screenshots + demo repo
