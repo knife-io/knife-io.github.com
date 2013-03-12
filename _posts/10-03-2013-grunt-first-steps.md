@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Using Grunt: first steps"
-permalink: post/10-03-2013-using-grunt-first-steps
+title: "Learning Grunt: first steps"
+permalink: post/10-03-2013-learning-grunt-first-steps
 comments: true
 published: true
 author: Anthony Ringoet
@@ -16,7 +16,7 @@ So, what is this thing called Grunt and how can it help you?
 From the [grunt documentation](http://gruntjs.com/):
 > “A task-based command line build tool for JavaScript projects”
 
-This means one simple thing. Stop repeating yourself and let Grunt do stuff for you. The [Grunt ecosystem][http://gruntjs.com/plugins] is constantly growing and being improved by open source contributors.
+This means one simple thing. Stop repeating yourself and let Grunt do stuff for you. The [Grunt ecosystem](http://gruntjs.com/plugins) is constantly growing and being improved by open source contributors.
 
 
 ## Plugins
@@ -30,9 +30,10 @@ You can find plugins for almost everything. Examples of tasks could be:
 
 This allows you to optimize your workflow to the limit.
 If you save a file you can have your tests run or your code minified.
-This means you can stop worrying about this stuff. You don't need to issue commands in the command line constantly. Just code and let Grunt work for you.
+This means you can stop worrying about this stuff. You don't need to issue commands in the command line constantly. Just code and _let Grunt work for you_.
 
-If you think about it Grunt is like [Codekit](http://incident57.com/codekit/) but with nothing but a CLI. And cross-platform out of the box. (+ probably a lot more extensible)
+If you think about it Grunt is like [Codekit](http://incident57.com/codekit/) but with nothing but a CLI.
+It's cross-platform out of the box, free as in [MIT licensed](https://github.com/gruntjs/grunt/blob/master/LICENSE-MIT) and extensible as hell.
 
 ## First use
 Grunt is able to set up a project for you by scaffolding a template based on your input in the commandline. This is nice but not needed for this simple demo. I want to show you how Grunt can help you in all your projects by adding just two files!
@@ -43,4 +44,52 @@ I'm not going to talk about this in detail. [Read up](http://gruntjs.com/getting
 
 
 ## Demo setup
-todo: talk about demo setup with code samples and screenshots + demo repo
+I made a [demo repository](https://github.com/knife-io/grunt-demo) that shows Grunt usage in it's most basic form with only one task. This makes it easy to understand what's actually going on.
+
+    module.exports = function(grunt){
+      grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        // set up first custom task: concat
+        // the options depend on the task you want to use
+        concat: {
+          options: {
+            // string to put between concatenated files
+            separator: ';'
+          },
+          dist: {
+            // files to concat together
+            src: ['js/*.js'],
+            // location of result file
+            dest: 'jsmin/<%= pkg.name %>.js'
+          }
+        }
+      });
+
+      // load contrib task files
+      // note: these should be installed from npm
+      grunt.loadNpmTasks('grunt-contrib-concat');
+      // register what to do when using the default 'grunt' command
+      grunt.registerTask('default', ['concat']);
+    };
+
+See the working version on [GitHub](http://github.com/add-url).
+
+This will concate all `.js` files inside the `/js` folder and concatenate them to `/jsmin` in the filename of your choice.
+
+The only thing you need to do is run `grunt` inside your project.
+
+    $ grunt
+
+
+
+## Multiple tasks
+
+todo: now add uglify, concat css, docco
+
+
+
+
+
+
+### using grunt ui in devtools?
+https://github.com/vladikoff/grunt-devtools
