@@ -140,10 +140,3 @@ Final gruntfile looks like this:
 
 I ran this file through [Docco](http://jashkenas.github.com/docco/) which generated a documentation file based on the inline comments. You could even let [grunt-docco plugin](https://github.com/DavidSouther/grunt-docco) do this for you.
 
-
-
-
-
-
-### todo: using grunt ui in devtools ?
-https://github.com/vladikoff/grunt-devtools
