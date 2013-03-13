@@ -138,5 +138,8 @@ Final gruntfile looks like this:
       grunt.registerTask('default', ['concat', 'uglify']);
     };
 
-I ran this file through [Docco](http://jashkenas.github.com/docco/) which generated a documentation file based on the inline comments. You could even let [grunt-docco plugin](https://github.com/DavidSouther/grunt-docco) do this for you.
+I ran this file through [Docco](http://jashkenas.github.com/docco/) which generated a documentation file based on the inline comments. You could even let [grunt-docco plugin](https://github.com/DavidSouther/grunt-docco) do this for you. Check this out in the `/docs` folder or [see it live](http://knife.io/grunt-demo/docs/Gruntfile.html).
 
+The latest working code can be found in the [repo](https://github.com/knife-io/grunt-demo) on GitHub.
+
+![grunt command in terminal](https://raw.github.com/knife-io/grunt-demo/gh-pages/screenshot.png)
